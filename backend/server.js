@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 // const uuid = require('uuid/v4');  // deprecated usage
-const uuid = require('uuid');
+const {v4:uuidv4} = require('uuid');
 
 const app = express();
 
@@ -37,7 +37,7 @@ app.post('/product', (req, res, next) => {
   }
 
   const createdProduct = {
-    id: uuid(),
+    id: uuidv4(),
     title,
     price
   };
